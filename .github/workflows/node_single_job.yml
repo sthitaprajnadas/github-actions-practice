@@ -1,0 +1,20 @@
+name: sample node deployment
+on:
+    push:
+    worklfow_dispatch:
+jobs:
+    lint:
+        runs-on: ubuntu-latest
+        steps:
+            - name: get code
+              uses: actions/checkout@v3
+            - name: install dep
+              action: npm ci
+            - name: lint
+              action: npm run lint
+            - name: test
+              action: npm run test
+            - name: build
+              action: npm run build
+
+
