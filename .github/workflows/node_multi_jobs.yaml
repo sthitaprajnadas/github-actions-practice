@@ -1,0 +1,32 @@
+name: multi job build
+on:
+    push:
+        branches: ["master"]
+
+jobs:
+    lint:
+        - name: get code
+          uses: actions/checkout@v3
+        - name: install dep
+          run: npm  ci
+        - name: lint
+          run: npm run lint
+    
+    test:
+        - name: get code
+          uses: actions/checkout@v3
+        - name: install dep
+          run: npm  ci
+        - name: test
+          run: npm run test    
+    
+    build:
+        - name: get code
+          uses: actions/checkout@v3
+        - name: install dep
+          run: npm  ci
+        - name: build
+          run: npm run build    
+
+
+    
