@@ -5,6 +5,8 @@ on:
 
 jobs:
     lint:
+        runs-on: ubuntu-latest
+        steps:
         - name: get code
           uses: actions/checkout@v3
         - name: install dep
@@ -13,6 +15,8 @@ jobs:
           run: npm run lint
     
     test:
+        runs-on: ubuntu-latest
+        steps:
         - name: get code
           uses: actions/checkout@v3
         - name: install dep
@@ -21,6 +25,8 @@ jobs:
           run: npm run test    
     
     build:
+        runs-on: ubuntu-latest
+        steps:
         - name: get code
           uses: actions/checkout@v3
         - name: install dep
