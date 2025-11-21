@@ -2,7 +2,6 @@ name: sample node deployment
 on:
     push:
         branches: ["main"]
-    workflow_dispatch:
 jobs:
     lint:
         runs-on: ubuntu-latest
