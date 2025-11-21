@@ -3,7 +3,7 @@ on:
     push:
         branches: ["master"]
 jobs:
-    lint:
+    complete_build:
         runs-on: ubuntu-latest
         steps:
             - name: get code
