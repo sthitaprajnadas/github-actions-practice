@@ -1,7 +1,8 @@
 name: sample node deployment
 on:
     push:
-    worklfow-dispatch:
+        branches: ["main"]
+    workflow_dispatch:
 jobs:
     lint:
         runs-on: ubuntu-latest
@@ -9,12 +10,12 @@ jobs:
             - name: get code
               uses: actions/checkout@v3
             - name: install dep
-              action: npm ci
+              run: npm ci
             - name: lint
-              action: npm run lint
+              run: npm run lint
             - name: test
-              action: npm run test
+              run: npm run test
             - name: build
-              action: npm run build
+              run: npm run build
 
 
